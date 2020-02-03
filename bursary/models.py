@@ -1,4 +1,7 @@
+# import datetime
+
 from django.db import models
+# from django.utils import timezone
 
 # general details of all applicants
 class Applicants(models.Model):
@@ -18,6 +21,9 @@ class Applicants(models.Model):
         default='n',
         help_text='Choose between Male or Female'
     )
+    # date_of_birth = models.DateField(auto_now=False, auto_now_add=False)
+    age = models.IntegerField(null=False)
+    # date_joined = models.DateTimeField('date joined')
 
     class Meta:
         verbose_name_plural = 'Applicants Details'
