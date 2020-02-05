@@ -5,23 +5,27 @@ class Applicants(models.Model):
     # first name
     first_name = models.CharField(
         "First Name",
-        max_length=100
+        max_length=100,
+        help_text="Enter first name"
     )
     # middle name
     middle_name = models.CharField(
         "Middle Name",
-        max_length=100
+        max_length=100,
+        help_text="Enter middle name"
     )
     # last name
     last_name = models.CharField(
         "Last Name",
-        max_length=100
+        max_length=100,
+        help_text="Enter last name"
     )
     # Date of Birth
     date_of_birth = models.DateField(
         "Date of Birth(DoB)",
         auto_now=False,
-        auto_now_add=False
+        auto_now_add=False,
+        help_text="Date of Birth"
     )
     # age
     age = models.IntegerField(
@@ -67,9 +71,16 @@ class Applicants(models.Model):
     parent1_IdNo = models.IntegerField(
         "Parent Id No",
     )
-    # parent1_scannedId
-
+    
 
     # function to auto add date registered
     def was_published_recently(self):
         return self.date_registered >= timezone.now() - datetime.timedelta(days=1)
+
+# Tertiary Education Applicants: University/Colleges/TechnicalInstitutes
+class TertiaryApplicants(models.Model):
+    pass
+
+# Secondary Education Applicants
+class SecondaryApplicants(models.Model):
+    pass
