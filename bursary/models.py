@@ -79,8 +79,33 @@ class Applicants(models.Model):
 
 # Tertiary Education Applicants: University/Colleges/TechnicalInstitutes
 class TertiaryApplicants(models.Model):
-    pass
+    applicant_name = models.ForeignKey(
+        Applicants,
+        on_delete=models.CASCADE,
+    )
+    national_ID_Number = models.IntegerField(
+        'National ID Number'
+    )
+    national_ID = models.ImageField(
+        'National ID Image',
+        upload_to="media/image"
+    )
+    TERTIARY_OPTIONS = (
+        ('c', 'College'),
+        ('u', 'University'),
+        ('t', 'Technical Institutes')
+    )
+    institution_type = models.CharField(
+        "Type of Institution",
+        choices=TERTIARY_OPTIONS,
+        default='c',
+        max_length=1
+    )
+    institution_name = models.CharField(
+        "Name of Institution",
+        max_length=200
+    )
 
 # Secondary Education Applicants
 class SecondaryApplicants(models.Model):
-    pass
+    applicant_name = models.ForeignKey(Applicants, on_delete=models.CASCADE)
