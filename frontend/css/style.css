@@ -9,7 +9,7 @@
 
 body {
 
-    color: #797979;
+    color: #0e0d0d;
 
     background: #eeeeee;
 
@@ -19,8 +19,16 @@ body {
 
     margin: 0px !important;
 
-    font-size:14px !important;
+    font-size:1.8rem !important;
 
+}
+
+span.help-block{
+    font-weight: bold;
+}
+
+input::placeholder{
+    color: #9e9b9b !important;
 }
 
 h1,h2,h3,h4,h5{
