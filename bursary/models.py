@@ -109,3 +109,25 @@ class TertiaryApplicants(models.Model):
 # Secondary Education Applicants
 class SecondaryApplicants(models.Model):
     applicant_name = models.ForeignKey(Applicants, on_delete=models.CASCADE)
+    kcpe_year = models.DateField(
+        'Year of KCPE'
+    )
+    kcpe_marks = models.IntegerField(
+        'KCPE Marks'
+    )
+    school_selected = models.CharField(
+        'Name of Secondary School',
+        max_length=200
+    )
+    SCHOOL_TYPE = (
+        ('n', 'National School'),
+        ('c', 'County School'),
+        ('s', 'Sub-County School'),
+        ('p', 'Private School')
+    )
+    school_type = models.CharField(
+        'Type of School',
+        choices=SCHOOL_TYPE,    
+        default='p',
+        max_length=1
+    )
