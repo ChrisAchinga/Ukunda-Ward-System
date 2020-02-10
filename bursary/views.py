@@ -7,3 +7,7 @@ def landingPage(request):
 # admin page view
 def adminPage(request):
     return render(request, 'bursary/admin.html')
+
+# charts views
+def chartView(request):
+    return render(request, 'bursary/charts,html')
