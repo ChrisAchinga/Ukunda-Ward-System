@@ -49,7 +49,7 @@
       </div>
 
       <!--logo start-->
-      <a href="index.html" class="logo">UKUNDA <span class="lite">Admin PANEL</span></a>
+      <a href="../index.html" class="logo">UKUNDA <span class="lite">Admin PANEL</span></a>
       <!--logo end-->
 
       <div class="nav search-row" id="top_menu">
@@ -316,7 +316,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="active">
-            <a class="" href="index.html">
+            <a class="" href="../">
               <i class="icon_house_alt"></i>
               <span>Dashboard</span>
             </a>
@@ -330,7 +330,7 @@
             <ul class="sub">
               <!-- <li><a class="" href="form_component.html">Form Elements</a></li>
               <li><a class="" href="form_validation.html">Form Validation</a></li> -->
-              <li><a class="" href="bursary_form_component.html">Bursary form</a></li>
+              <li><a class="" href="../bursary_form_component">Bursary form</a></li>
             </ul>
           </li>
           <!-- <li class="sub-menu">
@@ -352,7 +352,7 @@
             </a>
           </li> -->
           <li>
-            <a class="" href="chart-chartjs.html">
+            <a class="" href="../chart-chartjs/">
               <i class="icon_piechart"></i>
               <span>Charts</span>
 
@@ -378,11 +378,11 @@
               <span class="menu-arrow arrow_carrot-right"></span>
             </a>
             <ul class="sub">
-              <li><a class="" href="profile.html">Profile</a></li>
-              <li><a class="" href="login.html"><span>Login Page</span></a></li>
-              <li><a class="" href="contact.html"><span>Contact Page</span></a></li>
-              <li><a class="" href="blank.html">Blank Page</a></li>
-              <li><a class="" href="404.html">404 Error</a></li>
+              <li><a class="" href="../profile">Profile</a></li>
+              <li><a class="" href="../login"><span>Login Page</span></a></li>
+              <li><a class="" href="../contact"><span>Contact Page</span></a></li>
+              <li><a class="" href="../blank">Blank Page</a></li>
+              <li><a class="" href="../404">404 Error</a></li>
             </ul>
           </li>
 
@@ -394,33 +394,18 @@
 
     <!--main content start-->
     <section id="main-content">
+      {% block main-content %}
       <section class="wrapper">
         <!--overview start-->
         <div class="row">
           <div class="col-lg-12">
             <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+              <li><i class="fa fa-home"></i><a href="../index.html">Home</a></li>
               <li><i class="fa fa-laptop"></i>Dashboard</li>
             </ol>
           </div>
-        </div>
-
-      
-
-        <!-- Today status end -->
-
-
-
-
-        
-       
-        
-
-       
-
-
-        <!-- statics end -->
+        </div>         
 
           <div class="col-md-4 portlets">
 
@@ -673,6 +658,7 @@
         <!-- project team & activity end -->
 
       </section>
+      {% endblock %}
       <div class="text-right">
         <div class="credits">
           Designed by <a href="https://github.com/jumakiwaka">Juma Kiwaka</a>
@@ -681,7 +667,7 @@
     </section>
     <!--main content end-->
   </section>
-  <!-- container section start -->
+  <!-- container section end -->
 
   <!-- javascripts -->
   <script src="{% static 'js/jquery.js' %}"></script>
