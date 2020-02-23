@@ -16,6 +16,18 @@ def chartView(request):
 def bursaryView(request):
     return render(request, 'bursary/bursary_form_component.html')
 
+#all applicants view
+def applicantsView(request):   
+    return render(request, 'bursary/applicants.html')
+
+#secondary applicants view
+def sec_applicantsView(request):
+    return render(request, 'bursary/sec_applicants.html')
+
+#all applicants view
+def uni_applicantsView(request):
+    return render(request, 'bursary/uni_applicants.html')
+
 #login view
 def loginView(request):
     return render(request, 'bursary/login.html')

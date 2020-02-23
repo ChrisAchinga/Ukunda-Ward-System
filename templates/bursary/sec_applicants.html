@@ -1,0 +1,80 @@
+{% extends "bursary/index.html" %}
+
+{% block main-content %}
+<section class="wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-table"></i>Applicants</h3>
+            <ol class="breadcrumb">
+                <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                <li><i class="fa fa-table"></i>Applicants</li>
+                <li><i class="fa fa-th-list"></i>Table</li>
+            </ol>
+        </div>
+    </div>
+    <!-- page start-->
+
+    <script>
+        (async function () {
+            const response = await fetch('../static/js/mockuserdb.json');
+            const userData = await response.json();
+            let fields = undefined;
+            const tableBody = document.querySelector('table.table tbody');
+
+            const tableHead = document.querySelector('table.table thead > tr');
+
+            userData.forEach((user, index) => {
+                // adding field names dynamically
+                if (!fields) {
+                    fields = Object.keys(user);
+                    for (let index = 0; index < fields.length; index++) {
+                        const element = fields[index];
+                        tableHead.innerHTML += `<th>${element}</th>`;
+                    }
+                }
+                let rowData = `<td>${++index}</td> `;
+                for (const prop in user) {
+                    if (user.hasOwnProperty(prop)) {
+                        const elem = user[prop];
+                        const elemValues = Object.values(elem);
+                        const elemKeys = Object.keys(elem);
+                        const elemContent = `${elemKeys[0]} : ${elemValues[0]}, ${elemKeys[1]} : ${elemValues[1]}`
+
+                        rowData += `<td>${typeof (elem) === "object" ? elemContent : elem}</td>`;
+                    }
+                }
+                tableBody.innerHTML += `<tr>${rowData}</tr>`;
+            })
+
+        })();
+
+    </script>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    All Secondary Applicants table
+                </header>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <!-- page end-->
+</section>
+{% endblock %}

@@ -2,24 +2,26 @@
 
 {% block main-content %}
 <section class="wrapper">
-    <div class="row">
-      <div class="col-lg-12">
-        <h3 class="page-header"><i class="fa fa-file-text-o"></i> Applicant details</h3>
-        <ol class="breadcrumb">
-          <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-          <li><i class="icon_document_alt"></i>Forms</li>
-          <li><i class="fa fa-file-text-o"></i>Applicant form</li>
-        </ol>
-      </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 class="page-header"><i class="fa fa-file-text-o"></i> Applicant details</h3>
+      <ol class="breadcrumb">
+        <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+        <li><i class="icon_document_alt"></i>Forms</li>
+        <li><i class="fa fa-file-text-o"></i>Applicant form</li>
+      </ol>
     </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <section class="panel">
-          <header class="panel-heading">
-            Applicant details
-          </header>
-          <div class="panel-body">
-            <di/div class="form-horizontal " method="get">
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <section class="panel">
+
+        <header class="panel-heading">
+          Applicant details
+        </header>
+        <div class="panel-body">
+          <form action="../" method="POST">
+            <div class="form-horizontal " method="get">
               <div class="form-group">
                 <div class="col-sm-10">
                   <span class="help-block">All fields with * are required fields.</span>
@@ -116,6 +118,12 @@
                 </div>
               </div>
               <div class="form-group">
+                <label class="col-sm-2 control-label">Account number *</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control round-input" placeholder="enter school bank account number">
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-sm-2 control-label">Education level *</label>
                 <div class="col-sm-10">
                   <select class="form-control input-lg m-bot15 round-input" onchange="displayTertiaryApplication()"
@@ -123,7 +131,6 @@
                     <option value=""></option>
                     <option value="Tertiary">Tertiary</option>
                     <option value="Secondary">Secondary</option>
-                    <option value="Primary">Primary</option>
                   </select>
                 </div>
               </div>
@@ -157,8 +164,7 @@
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Institution name *</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control round-input tertiary"
-                      placeholder="enter institution name">
+                    <input type="text" class="form-control round-input tertiary" placeholder="enter institution name">
                   </div>
                 </div>
                 <div class="form-group">
@@ -177,15 +183,13 @@
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Course duration *</label>
                   <div class="col-sm-10">
-                    <input type="number" class="form-control round-input tertiary"
-                      placeholder="enter course duration">
+                    <input type="number" class="form-control round-input tertiary" placeholder="enter course duration">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Year of study *</label>
                   <div class="col-sm-10">
-                    <input type="number" class="form-control round-input tertiary"
-                      placeholder="enter year of study">
+                    <input type="number" class="form-control round-input tertiary" placeholder="enter year of study">
                   </div>
                 </div>
                 <div class="form-group">
@@ -220,15 +224,54 @@
                   </div>
                 </div>
               </div>
-              </form>
-          </div>
-        </section>
+              <div class="secondary">
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Admission number *</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control round-input tertiary" placeholder="enter admission number">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Form *</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control round-input tertiary" placeholder="enter form">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Term </label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control round-input tertiary" placeholder="enter term">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">School Name *</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control round-input tertiary" placeholder="enter school name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Institution type *</label>
+                  <div class="col-sm-10">
+                    <select class="form-control input-lg m-bot15 round-input">
+                      <option value=""></option>
+                      <option value="Guardian">Private, National </option>
+                      <option value="Guardian">Private, County </option>
+                      <option value="Mother">Public, National</option>
+                      <option value="Guardian">Public, County </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <input type="submit" value="Submit">
+          </form>
+        </div>
+      </section>
 
-      </div>
     </div>
+  </div>
 
 
 
-    <!-- page end-->
-  </section>
+  <!-- page end-->
+</section>
 {% endblock %}
