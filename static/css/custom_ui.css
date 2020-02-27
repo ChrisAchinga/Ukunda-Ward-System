@@ -1,0 +1,4 @@
+div.chats-area, section.todo-list{
+    height: 440px;
+    overflow-y: scroll;
+}
