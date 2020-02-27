@@ -35,7 +35,7 @@ function sendChatMsg() {
 
     <div class="chat-content">
 
-      <div class="chat-meta">3 hours ago <span class="pull-right">Ward Admin</span></div>
+      <div class="chat-meta">now <span class="pull-right">Ward Admin</span></div>
      ${chatBox.value}
       <div class="clearfix"></div>
     </div>
@@ -48,7 +48,7 @@ function sendChatMsg() {
 
   <div class="chat-content">
 
-    <div class="chat-meta">Juma Kiwaka <span class="pull-right">3 hours ago</span></div>
+    <div class="chat-meta">Juma Kiwaka <span class="pull-right">now</span></div>
     Hi!
     <div class="clearfix"></div>
   </div>
@@ -63,9 +63,13 @@ function addTodo() {
   const addTodoForm = document.querySelector('form.todo');
   const todoDesc = document.querySelectorAll('form.todo input');
   const tasks = document.querySelector('table.personal-task > tbody');
+  const task = document.querySelectorAll('table.personal-task > tbody tr');
+
+
 
   addTodoForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
+
     tasks.innerHTML += `
     <tr>
     <td>${todoDesc[1].value.replace('/', '-')}, ${todoDesc[2].value}</td>
@@ -78,9 +82,52 @@ function addTodo() {
     <td>
       <div id="work-progress3"></div>
     </td>
-  </tr>`;
-    console.log(todoDesc[2]);
+    </tr>`;
+    todoDesc[0].value = todoDesc[1].value = todoDesc[2].value = '';
+    task[task.length - 1].focus();
+  })
+}
+
+function searchUser() {
+  const searchForm = document.querySelector('form.search-form');
+  const searchField = document.querySelector('form.search-form input');
+
+  searchForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    let { value } = searchField;
+    const tr = document.querySelectorAll('table.table > tbody tr');
+
+    tr.forEach(trow => {
+      let searchStr = `${trow.innerText}`;
+      if (!searchStr.includes(value)) {
+        trow.style.display = 'none';
+
+      } else {
+        trow.style.display = 'table-row';
+      }
+
+    });
+    searchField.value = '';
+  })
+
+}
+
+function applyBursary() {
+  const applyForm = document.querySelector('form.apply-bursary');
+
+  applyForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    const fields = applyForm.elements;
+    for (let i = 0; i < fields.length - 1; i++) {
+      const field = fields[i];
+      console.log(field.value);
+    }
+
+
+
+    console.log('submitting form');
 
   })
 }
+
 
