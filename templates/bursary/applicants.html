@@ -14,44 +14,7 @@
   </div>
   <!-- page start-->
 
-  <script>
-    (async function () {
-      const response = await fetch('../static/js/mockuserdb.json');
-      let userData = await response.json();
-      let fields = undefined;
-      const tableBody = document.querySelector('table.table tbody');
 
-      const tableHead = document.querySelector('table.table thead > tr');
-      userData.splice(30);
-      userData.forEach((user, index) => {
-        // adding field names dynamically
-        if (!fields) {
-          fields = Object.keys(user);
-          for (let index = 0; index < fields.length - 4; index++) {
-            const element = fields[index];
-            tableHead.innerHTML += `<th>${element}</th>`;
-          }
-        }
-        let rowData = index < 30 ? `<td>${index + 1}</td> ` : '';
-        let count = 0;
-        for (const prop in user) {
-          if (user.hasOwnProperty(prop)) {
-            const elem = user[prop];
-            const elemValues = Object.values(elem);
-            const elemKeys = Object.keys(elem);
-            const elemContent = `${elemKeys[0]} : ${elemValues[0]}, ${elemKeys[1]} : ${elemValues[1]}`
-            if (++count < (fields.length - 3) && index < 30) {
-              rowData += `<td>${typeof (elem) === "object" ? elemContent : elem}</td>`;
-            }
-
-          }
-        }
-        tableBody.innerHTML += `<tr>${rowData}</tr>`;
-      })
-
-    })();
-
-  </script>
 
   <div class="row">
     <div class="col-lg-12">
@@ -77,6 +40,44 @@
       </section>
     </div>
   </div>
+
+  <script>
+    (async function () {
+      const response = await fetch('../static/js/mockuserdb.json');
+      let userData = await response.json();
+      let fields = undefined;
+      const tableBody = document.querySelector('table.table tbody');
+
+      const tableHead = document.querySelector('table.table thead > tr');
+      userData.splice(30);
+      userData.forEach((user, index) => {
+        // adding field names dynamically
+        if (!fields) {
+          fields = Object.keys(user);
+          for (let index = 0; index < fields.length - 4; index++) {
+            const element = fields[index];
+            tableHead.innerHTML += `<th>${element}</th>`;
+          }
+        }
+        let rowData = `<td>${index + 1}</td> `;
+        let count = 0;
+        for (const prop in user) {
+          if (user.hasOwnProperty(prop)) {
+            const elem = user[prop];
+            const elemValues = Object.values(elem);
+            const elemKeys = Object.keys(elem);
+            const elemContent = `${elemKeys[0]} : ${elemValues[0]}, ${elemKeys[1]} : ${elemValues[1]}`
+            if (++count < (fields.length - 3)) {
+              rowData += `<td>${typeof (elem) === "object" ? elemContent : elem}</td>`;
+            }
+
+          }
+        }
+        tableBody.innerHTML += `<tr>${rowData}</tr>`;
+      })
+
+    })();
+  </script>
 
   <!-- page end-->
   <script>

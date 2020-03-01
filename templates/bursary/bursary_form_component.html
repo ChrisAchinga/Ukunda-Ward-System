@@ -20,50 +20,35 @@
           Applicant details
         </header>
         <div class="panel-body">
-          <form action="../" method="POST">
+          <form action="" method="" class="apply-bursary">
             <div class="form-horizontal " method="get">
               <div class="form-group">
                 <div class="col-sm-10">
-                  <span class="help-block">All fields with * are required fields.</span>
+                  <span class="help-block">All fields with * are fields.</span>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label">First Name *</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control round-input" placeholder="enter first name">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Middle Name *</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control round-input" placeholder="enter middle name">
+                  <input type="text" name="first_name" class="form-control round-input" placeholder="enter first name">
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Last Name *</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control round-input" placeholder="enter last name">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="control-label col-sm-2">Date of birth *</label>
-                <div class="col-sm-10">
-                  <input id="dp2" type="date" value="" size="16" class="form-control round-input"
-                    placeholder="enter date of birth">
+                  <input type="text" name="last_name" class="form-control round-input" placeholder="enter last name">
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-2 control-label">Age *</label>
+                <label class="col-sm-2 control-label">Village *</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control round-input" placeholder="enter age">
+                  <input type="text" name="location" class="form-control round-input" placeholder="enter last name">
                 </div>
               </div>
-
               <div class="form-group">
                 <label class="col-sm-2 control-label">Gender *</label>
                 <div class="col-sm-10">
-                  <select class="form-control input-lg m-bot15 round-input">
+                  <select class="form-control input-lg m-bot15 round-input" name="gender">
                     <option value=""></option>
                     <option value="male">male</option>
                     <option value="female">female</option>
@@ -71,9 +56,29 @@
                 </div>
               </div>
               <div class="form-group">
+                <label class="control-label col-sm-2">Date of birth *</label>
+                <div class="col-sm-10">
+                  <input id="dp2" type="date" name="dob" value="" size="16" class="form-control round-input"
+                    placeholder="enter date of birth">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Age *</label>
+                <div class="col-sm-10">
+                  <input type="number" name="age" class="form-control round-input" placeholder="enter age">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Birth Certificate No. *</label>
+                <div class="col-sm-10">
+                  <input type="number" name="birthcert_no" class="form-control round-input" placeholder="enter age">
+                </div>
+              </div>
+
+              <div class="form-group">
                 <label class="col-sm-2 control-label">Parent/ Guardian</label>
                 <div class="col-sm-10">
-                  <select class="form-control input-lg m-bot15 round-input">
+                  <select class="form-control input-lg m-bot15 round-input" name="parent_type">
                     <option value=""></option>
                     <option value="Guardian">Guardian</option>
                     <option value="Mother">Mother</option>
@@ -90,25 +95,29 @@
               <div class="form-group">
                 <label class="col-sm-2 control-label">First Name *</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control round-input" placeholder="enter first name">
+                  <input type="text" name="p_first_name" class="form-control round-input"
+                    placeholder="enter first name">
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Middle Name *</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control round-input" placeholder="enter middle name">
+                  <input type="text" name="p_middle_name" class="form-control round-input"
+                    placeholder="enter middle name">
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Last Name *</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control round-input" placeholder="enter last name">
+                  <input type="text" name="p_last_name" class="form-control round-input" placeholder="enter last name"
+                    aria="true">
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Id no. *</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control round-input" placeholder="enter id number">
+                  <input type="number" name="p_id_no" class="form-control round-input" placeholder="enter id number"
+                    aria="true">
                 </div>
               </div>
               <!-- tertiary institution details -->
@@ -120,14 +129,15 @@
               <div class="form-group">
                 <label class="col-sm-2 control-label">Account number *</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control round-input" placeholder="enter school bank account number">
+                  <input type="text" name="account_no" class="form-control round-input"
+                    placeholder="enter school bank account number" aria="true">
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Education level *</label>
                 <div class="col-sm-10">
-                  <select class="form-control input-lg m-bot15 round-input" onchange="toggleApplication()"
-                    id="education-level">
+                  <select name="education_level" class="form-control input-lg m-bot15 round-input"
+                    onchange="toggleApplication()" id="education-level" aria="true">
                     <option value=""></option>
                     <option value="Tertiary">Tertiary</option>
                     <option value="Secondary">Secondary</option>
@@ -139,13 +149,15 @@
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Id number *</label>
                   <div class="col-sm-10">
-                    <input type="number" class="form-control round-input tertiary" placeholder="enter Id number">
+                    <input type="number" name="s_id_no" class="form-control round-input tertiary"
+                      placeholder="enter Id number" aria="true">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile" class="col-sm-2 control-label">Scanned id *</label>
                   <div class="col-sm-10">
-                    <input type="file" id="exampleInputFile" class="form-control round-input tertiary">
+                    <input type="file" name="scanned_id" id="exampleInputFile" class="form-control round-input tertiary"
+                      aria="true">
                     <p class="help-block">Please upload a scanned copy of the original id card.</p>
                   </div>
 
@@ -153,7 +165,7 @@
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Institution type *</label>
                   <div class="col-sm-10">
-                    <select class="form-control input-lg m-bot15 round-input">
+                    <select name="institution_type" class="form-control input-lg m-bot15 round-input" aria="true">
                       <option value=""></option>
                       <option value="Guardian">College</option>
                       <option value="Mother">University</option>
@@ -164,52 +176,57 @@
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Institution name *</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control round-input tertiary" placeholder="enter institution name">
+                    <input type="text" name="institution_name" class="form-control round-input tertiary"
+                      placeholder="enter institution name" aria="true">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Located in *</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control round-input tertiary"
+                    <input type="text" name="located_in" class="form-control round-input tertiary"
                       placeholder="enter institution location">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Course name *</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control round-input tertiary" placeholder="enter course name">
+                    <input type="text" name="course_name" class="form-control round-input tertiary"
+                      placeholder="enter course name" aria="true">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Course duration *</label>
                   <div class="col-sm-10">
-                    <input type="number" class="form-control round-input tertiary" placeholder="enter course duration">
+                    <input type="number" name="course_duration" class="form-control round-input tertiary"
+                      placeholder="enter course duration" aria="true">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Year of study *</label>
                   <div class="col-sm-10">
-                    <input type="number" class="form-control round-input tertiary" placeholder="enter year of study">
+                    <input type="number" name="year_of_study" class="form-control round-input tertiary"
+                      placeholder="enter year of study" aria="true">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-2">Expected date of completion *</label>
                   <div class="col-sm-10">
-                    <input id="dp1" type="date" value="" size="16" class="form-control round-input"
-                      placeholder="enter expected date of completion">
+                    <input id="dp1" type="date" name="expected_doc" value="" size="16" class="form-control round-input"
+                      placeholder="enter expected date of completion" aria="true">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Registration number *</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control round-input tertiary"
-                      placeholder="enter Registration number">
+                    <input type="text" name="reg_number" class="form-control round-input tertiary"
+                      placeholder="enter Registration number" aria="true">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Phone number</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control round-input tertiary" placeholder="enter phone number">
+                    <input type="text" name="phone_number" class="form-control round-input tertiary"
+                      placeholder="enter phone number">
                     <span class="helper-block">This may be used to inform applicant when the bursary is out/ open
                       for
                       application again</span>
@@ -218,7 +235,8 @@
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Email </label>
                   <div class="col-sm-10">
-                    <input type="email" class="form-control round-input tertiary" placeholder="enter email">
+                    <input type="email" name="email" class="form-control round-input tertiary"
+                      placeholder="enter email">
                     <span class="helper-block">This may be used to inform applicant when local opportunities
                       arise</span>
                   </div>
@@ -228,31 +246,35 @@
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Admission number *</label>
                   <div class="col-sm-10">
-                    <input type="number" class="form-control round-input tertiary" placeholder="enter admission number">
+                    <input type="number" name="admisson_no" class="form-control round-input tertiary"
+                      placeholder="enter admission number" aria="true">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Form *</label>
                   <div class="col-sm-10">
-                    <input type="number" class="form-control round-input tertiary" placeholder="enter form">
+                    <input type="number" name="form" class="form-control round-input tertiary" placeholder="enter form"
+                      aria="true">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Term </label>
                   <div class="col-sm-10">
-                    <input type="number" class="form-control round-input tertiary" placeholder="enter term">
+                    <input type="number" name="term" class="form-control round-input tertiary" placeholder="enter term"
+                      aria="true">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label">School Name *</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control round-input tertiary" placeholder="enter school name">
+                    <input type="text" name="school_name" class="form-control round-input tertiary"
+                      placeholder="enter school name" aria="true">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Institution type *</label>
+                  <label class="col-sm-2 control-label">School type *</label>
                   <div class="col-sm-10">
-                    <select class="form-control input-lg m-bot15 round-input">
+                    <select name="school_type" class="form-control input-lg m-bot15 round-input" aria="true">
                       <option value=""></option>
                       <option value="Guardian">Private, National </option>
                       <option value="Guardian">Private, County </option>
@@ -272,7 +294,8 @@
 
 
   <script>
-    toggleApplication();   
+    toggleApplication();
+    applyBursary();  
   </script>
   <!-- page end-->
 </section>
