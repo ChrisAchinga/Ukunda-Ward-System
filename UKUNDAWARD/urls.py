@@ -16,5 +16,5 @@ urlpatterns = [
     path('profile/', v.profileView, name='profile'),
     path('contact/', v.contactView, name='contact'),
     path('404/', v.notFoundView, name='notfound'),
-    path('api/fake/addApplicant', v.updateFakeJsonDb, name='saveApplicant')    
+    # path('api/fake/addApplicant', v.updateFakeJsonDb, name='saveApplicant')    
 ]

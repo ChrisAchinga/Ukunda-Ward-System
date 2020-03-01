@@ -1,4 +1,6 @@
 // the ui form for tertiary applicant -- appears when tertiary is selected from education level field
+
+
 function toggleApplication() {
   const tertiaryForm = document.querySelector('.tertiary');
   const secondaryForm = document.querySelector('.secondary');
@@ -88,6 +90,11 @@ function addTodo() {
   })
 }
 
+
+
+
+
+// search applicants table
 function searchUser() {
   const searchForm = document.querySelector('form.search-form');
   const searchField = document.querySelector('form.search-form input');
@@ -117,13 +124,19 @@ function applyBursary() {
 
   applyForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
+    let data = {};
     const fields = applyForm.elements;
     for (let i = 0; i < fields.length - 1; i++) {
       const field = fields[i];
-      console.log(field.value);
+      data[field.name] = field.value;
     }
 
 
+    console.table([data]);
+    // fetch('/api/fake/addApplicant', {
+    //   method: 'POST',
+    //   data: data
+    // })
 
     console.log('submitting form');
 
