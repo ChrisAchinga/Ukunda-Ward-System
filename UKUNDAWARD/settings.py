@@ -14,7 +14,7 @@ SECRET_KEY = '#($6-_g4$3f)ke-fc)bx)t+2y%95t+9&717rh)cvjn0di=*m-p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://ukundawardproject.herokuapp.com']
+ALLOWED_HOSTS = [' https://ukundawardproject.herokuapp.com/']
 
 
 # Application definition
